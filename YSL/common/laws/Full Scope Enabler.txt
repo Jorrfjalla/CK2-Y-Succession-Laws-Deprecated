@@ -1,0 +1,68 @@
+gender_laws = {
+	enatic_succession = {
+		male_dynasty_opinion = -10
+		female_dynasty_opinion = 10
+		
+		potential = {
+			always = yes
+		}
+		allow = {
+		}
+		effect = {
+			gender_succ = enatic
+		}
+		revoke_allowed = {
+			always = no
+		}
+		default_selection = {
+			factor = 1
+			
+		}
+	}
+	
+	enatic_cognatic_succession = {
+		male_dynasty_opinion = -10
+		female_dynasty_opinion = 5
+		
+		potential = {
+			always = yes
+		}
+		allow = {
+		}
+		effect = {
+			gender_succ = enatic_cognatic
+		}
+		revoke_allowed = {
+			always = no
+		}	
+		default_selection = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					holder_scope = {
+						OR = {
+							has_religion_feature = religion_matriarchal
+							any_owned_bloodline = {
+								has_bloodline_flag = bloodline_enatic_cognatic 
+							}
+						}
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 100
+				holder_scope = {
+					OR = {
+						has_religion_feature = religion_matriarchal
+						any_owned_bloodline = {
+							has_bloodline_flag = bloodline_enatic_cognatic 
+						}
+					}
+				}
+			}
+		}		
+	}	
+}
