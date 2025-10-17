@@ -16,7 +16,6 @@ gender_laws = {
 		}
 		default_selection = {
 			factor = 1
-			
 		}
 	}
 	
